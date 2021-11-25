@@ -1,10 +1,39 @@
 --- dwm.c
 +++ dwm.c
-@@ -262,6 +264,7 @@ static void (*handler[LASTEvent]) (XEvent *) = {
- 	[UnmapNotify] = unmapnotify
- };
- static Atom wmatom[WMLast], netatom[NetLast];
-+static int restart = 0;
- static int running = 1;
- static Cur *cursor[CurLast];
- static Clr **scheme;
+@@ -47,8 +47,8 @@
+ /* macros */
+ #define BUTTONMASK              (ButtonPressMask|ButtonReleaseMask)
+ #define CLEANMASK(mask)         (mask & ~(numlockmask|LockMask) & (ShiftMask|ControlMask|Mod1Mask|Mod2Mask|Mod3Mask|Mod4Mask|Mod5Mask))
+-#define INTERSECT(x,y,w,h,m)    (MAX(0, MIN((x)+(w),(m)->wx+(m)->ww) - MAX((x),(m)->wx)) \
+-                               * MAX(0, MIN((y)+(h),(m)->wy+(m)->wh) - MAX((y),(m)->wy)))
++#define INTERSECT(x,y,w,h,m)    (MAX(0, MIN((x)+(w),(m)->mx+(m)->mw) - MAX((x),(m)->mx)) \
++                               * MAX(0, MIN((y)+(h),(m)->my+(m)->mh) - MAX((y),(m)->my)))
+ #define ISVISIBLE(C)            ((C->tags & C->mon->tagset[C->mon->seltags]))
+ #define LENGTH(X)               (sizeof X / sizeof X[0])
+ #define MOUSEMASK               (BUTTONMASK|PointerMotionMask)
+@@ -645,6 +651,7 @@ createmon(void)
+ 	m->nmaster = nmaster;
+ 	m->showbar = showbar;
+ 	m->topbar = topbar;
++	m->bh = bh;
+ 	m->lt[0] = &layouts[0];
+ 	m->lt[1] = &layouts[1 % LENGTH(layouts)];
+ 	strncpy(m->ltsymbol, layouts[0].symbol, sizeof m->ltsymbol);
+@@ -705,6 +715,9 @@ dirtomon(int dir)
+ void
+ drawbar(Monitor *m)
+ {
++	if (usealtbar)
++		return;
++
+ 	int x, w, tw = 0;
+ 	int boxs = drw->fonts->h / 9;
+ 	int boxw = drw->fonts->h / 6 + 2;
+@@ -1627,6 +1663,7 @@ setup(void)
+ 	XSelectInput(dpy, root, wa.event_mask);
+ 	grabkeys();
+ 	focus(NULL);
++	spawnbar();
+ }
+ 
+ 
