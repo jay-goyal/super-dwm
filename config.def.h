@@ -125,7 +125,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 	{ MODKEY|ShiftMask,             XK_r,      quit,           {1} }, 
 	{ MODKEY|ControlMask,           XK_s,      spawn,          SHCMD("shutdown now") },
-	{ MODKEY|ControlMask,           XK_s,      spawn,          SHCMD("reboot") },
+	{ MODKEY|ControlMask,           XK_r,      spawn,          SHCMD("reboot") },
 	/* VOULUME */
 	{0,                XF86XK_AudioLowerVolume,     spawn,         {.v = downvol } },
 	{0,                XF86XK_AudioRaiseVolume,     spawn,         {.v = upvol } },
