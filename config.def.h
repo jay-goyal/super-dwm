@@ -15,6 +15,7 @@ static const char *fonts[]          = { "MesloLGS Nerd Fone Mono:size=10" };
 static const char dmenufont[]       = "monospace:size=10";
 static const char col_gray1[]       = "#222222";
 static const char col_norm[]        = "#D0D0D0";
+static const char col_norm_float[]  = "#F07178";
 static const char col_active[]      = "#82AAFF";
 static const char col_gray3[]       = "#BBBBBB";
 static const char col_gray4[]       = "#EEEEEE";
@@ -75,6 +76,7 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *termcmd[]  = { "alacritty", NULL };
 static const char *browser[] = { "chromium", NULL };
 static const char *editor[] = { "emacsclient", "-c", NULL };
+static const char *file[] = { "thunar", NULL };
 static const char *downvol[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "-1%", NULL };
 static const char *upvol[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "+1%", NULL };
 static const char *mute[] = { "pactl", "set-sink-mute", "@DEFAULT_SINK@", "toggle", NULL };
@@ -86,6 +88,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_x,      spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      spawn,          {.v = browser } },
 	{ MODKEY,                       XK_c,      spawn,          {.v = editor } },
+	{ MODKEY,                       XK_e,      spawn,          {.v = file } },
 	{ MODKEY,                       XK_q,      killclient,     {0} },
 	/* LAYOUT */
 	{ MODKEY|ShiftMask,             XK_j,      rotatestack,    {.i = +1 } },
