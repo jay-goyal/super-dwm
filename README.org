@@ -1,0 +1,24 @@
+#+TITLE: Super-DWM
+#+AUTHOR: Jay Goyal
+
+My custom build of DWM
+
+** Patches:
+   - *actualfullscreen* to toggle fullscreen
+   - *alwayscenter*
+   - *anybar* because I use polybar
+   - *attachbottom* to make spawning a new window not distracting
+   - *autostart* to not rely on xinitrc
+   - *cyclelayouts* to cycle between layouts
+   - *float-border-color* to give floats a different border color
+   - *fullgaps* I love gaps :)
+   - *gaplessgrid* seemed cool
+   - *ipc* required by polybar-dwm-module
+   - *restartsig* restart dwm with a key combination
+   - *rotatestack* seemed usefull and I have no idea where it takes effect
+
+** Deploying:
+   Clone the repo and run:
+   #+begin_src shell
+	 sudo make install
+   #+end_src
