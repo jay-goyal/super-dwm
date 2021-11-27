@@ -36,9 +36,8 @@ static const Rule rules[] = {
 	 */
 	/* class             instance    title       tags mask     isfloating   monitor */
 	{ "firefox",          NULL,       NULL,       1,            0,           -1 },
-	{ "Chromium",         NULL,       NULL,       1,            0,           -1 },
+	{ "Brave-browser",    NULL,       NULL,       1,            0,           -1 },
 	{ "Code",             NULL,       NULL,       1 << 1,       0,           -1 },
-	{ "Emacs",            NULL,       NULL,       0,            0,           -1 },
 	{ "Virt-manager",     NULL,       NULL,       1 << 2,       0,           -1 },
 	{ "Spotify",          NULL,       NULL,       1 << 3,       0,           -1 },
 	{ "discord",          NULL,       NULL,       1 << 5,       0,           -1 },
@@ -74,7 +73,7 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0";
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
-static const char *browser[] = { "chromium", NULL };
+static const char *browser[] = { "brave", NULL };
 static const char *editor[] = { "emacsclient", "-c", NULL };
 static const char *file[] = { "thunar", NULL };
 static const char *downvol[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "-1%", NULL };
