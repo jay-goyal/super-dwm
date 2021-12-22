@@ -40,6 +40,7 @@ static const Rule rules[] = {
 	{ "Code",             NULL,       NULL,       1 << 1,       0,           -1 },
 	{ "Virt-manager",     NULL,       NULL,       1 << 2,       0,           -1 },
 	{ "Spotify",          NULL,       NULL,       1 << 3,       0,           -1 },
+	{ "vlc",              NULL,       NULL,       1 << 4,       0,           -1 },
 	{ "discord",          NULL,       NULL,       1 << 5,       0,           -1 },
 	{ "qBittorrent",      NULL,       NULL,       1 << 6,       0,           -1 },
 };
@@ -76,6 +77,7 @@ static const char *termcmd[]  = { "alacritty", NULL };
 static const char *browser[] = { "firefox", NULL };
 static const char *editor[] = { "emacsclient", "-c", NULL };
 static const char *file[] = { "thunar", NULL };
+static const char *pdf[] = { "zathura", NULL };
 static const char *downvol[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "-1%", NULL };
 static const char *upvol[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "+1%", NULL };
 static const char *mute[] = { "pactl", "set-sink-mute", "@DEFAULT_SINK@", "toggle", NULL };
@@ -88,6 +90,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_b,      spawn,          {.v = browser } },
 	{ MODKEY,                       XK_c,      spawn,          {.v = editor } },
 	{ MODKEY,                       XK_e,      spawn,          {.v = file } },
+	{ MODKEY,                       XK_p,      spawn,          {.v = pdf } },
 	{ MODKEY,                       XK_q,      killclient,     {0} },
 	/* LAYOUT */
 	{ MODKEY|ShiftMask,             XK_j,      rotatestack,    {.i = +1 } },
