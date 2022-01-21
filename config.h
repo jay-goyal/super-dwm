@@ -39,6 +39,7 @@ static const Rule rules[] = {
     /* class             instance    title       tags mask     isfloating
        monitor */
     {"firefox", NULL, NULL, 1, 0, -1},
+    {"firefoxdeveloperedition", NULL, NULL, 1, 0, -1},
     {"Brave-browser", NULL, NULL, 1, 0, -1},
     {"Code", NULL, NULL, 1 << 1, 0, -1},
     {"Virt-manager", NULL, NULL, 1 << 2, 0, -1},
@@ -84,7 +85,7 @@ static const char *dmenucmd[] = {
     "-nf",       col_gray3, "-sb",    col_cyan, "-sf",     col_gray4, NULL
 };
 static const char *termcmd[] = {"alacritty", NULL};
-static const char *browser[] = {"firefox", NULL};
+static const char *browser[] = {"firefox-developer-edition", NULL};
 static const char *editor[] = {"emacsclient", "-c", NULL};
 static const char *file[] = {"thunar", NULL};
 static const char *pdf[] = {"zathura", NULL};
