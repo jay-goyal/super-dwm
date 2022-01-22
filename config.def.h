@@ -42,6 +42,8 @@ static const Rule rules[] = {
     {"firefoxdeveloperedition", NULL, NULL, 1, 0, -1},
     {"Brave-browser", NULL, NULL, 1, 0, -1},
     {"Code", NULL, NULL, 1 << 1, 0, -1},
+    {"jetbrains-clion", NULL, NULL, 1 << 1, 0, -1},
+    {"jetbrains-webstorm", NULL, NULL, 1 << 1, 0, -1},
     {"Virt-manager", NULL, NULL, 1 << 2, 0, -1},
     {"Spotify", NULL, NULL, 1 << 3, 0, -1},
     {"vlc", NULL, NULL, 1 << 4, 0, -1},
@@ -86,7 +88,7 @@ static const char *dmenucmd[] = {
 };
 static const char *termcmd[] = {"alacritty", NULL};
 static const char *browser[] = {"firefox-developer-edition", NULL};
-static const char *editor[] = {"emacsclient", "-c", NULL};
+static const char *editor[] = {"/home/jay/.local/bin/code.sh", NULL};
 static const char *file[] = {"thunar", NULL};
 static const char *pdf[] = {"zathura", NULL};
 static const char *vol_up[] = {"pactl", "set-sink-volume", "@DEFAULT_SINK@",
@@ -103,6 +105,7 @@ static const char *mic_mute[] = {"pactl", "set-source-mute", "@DEFAULT_SOURCE@",
                                 };
 static const char *brightness_up[] = {"xbacklight", "-inc", "5.0", NULL};
 static const char *brightness_down[] = {"xbacklight", "-dec", "5.0", NULL};
+static const char *profile_set[] = {"asusctl", "profile", "-n", NULL};
 
 static Key keys[] = {
     /* modifier                     key        function        argument */
@@ -156,6 +159,7 @@ static Key keys[] = {
     {0, XF86XK_AudioMicMute, spawn, {.v = mic_mute}},
     {0, XF86XK_MonBrightnessUp, spawn, {.v = brightness_up}},
     {0, XF86XK_MonBrightnessDown, spawn, {.v = brightness_down}},
+    {0, XF86XK_Launch4, spawn, {.v = profile_set}},
 };
 
 /* button definitions */
