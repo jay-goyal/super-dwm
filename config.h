@@ -87,7 +87,7 @@ static const char *dmenucmd[] = {
     "-nf",       col_gray3, "-sb",    col_cyan, "-sf",     col_gray4, NULL
 };
 static const char *termcmd[] = {"alacritty", NULL};
-static const char *browser[] = {"firefox-developer-edition", NULL};
+static const char *browser[] = {"firefox", NULL};
 static const char *editor[] = {"/home/jay/.local/bin/code.sh", NULL};
 static const char *file[] = {"thunar", NULL};
 static const char *pdf[] = {"zathura", NULL};
